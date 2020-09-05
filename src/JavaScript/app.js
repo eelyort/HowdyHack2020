@@ -32,7 +32,16 @@ var Shell = function (_React$Component) {
                         React.createElement(App, null)
                     )
                 );
+            } else {
+                return React.createElement("div", { ref: this.wrapperRef, className: "react_wrapper" });
             }
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.setState(function () {
+                return { ready: true };
+            });
         }
     }]);
 
@@ -51,7 +60,12 @@ var App = function (_React$Component2) {
     _createClass(App, [{
         key: "render",
         value: function render() {
-            return React.createElement("div", { id: "test" });
+            return null;
+            // return(
+            //     <div id={"test"}>
+            //
+            //     </div>
+            // );
         }
     }]);
 

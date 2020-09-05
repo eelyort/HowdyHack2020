@@ -15,6 +15,15 @@ class Shell extends React.Component{
                 </div>
             );
         }
+        else{
+            return (
+                <div ref={this.wrapperRef} className={"react_wrapper"}>
+                </div>
+            );
+        }
+    }
+    componentDidMount(){
+        this.setState(() => ({ready: true}));
     }
 }
 
@@ -23,12 +32,14 @@ class App extends React.Component{
         super(props);
     }
     render(){
-        return(
-            <div id={"test"}>
-
-            </div>
-        );
+        return null;
+        // return(
+        //     <div id={"test"}>
+        //
+        //     </div>
+        // );
     }
+
 }
 
 ReactDOM.render(<Shell />, document.getElementById("cont"));
