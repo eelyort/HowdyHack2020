@@ -1,4 +1,4 @@
-class Enemy{
+class Enemy extends{
     constructor(startX, startY, range, angle) {
         this.x = startX;
         this.y = startY;
