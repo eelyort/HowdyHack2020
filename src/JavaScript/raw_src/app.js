@@ -32,12 +32,13 @@ class App extends React.Component{
         super(props);
     }
     render(){
-        return null;
-        // return(
-        //     <div id={"test"}>
-        //
-        //     </div>
-        // );
+        // return null;
+        return(
+            <Fragment>
+                <UI />
+                <GameCanvas />
+            </Fragment>
+        );
     }
 
 }

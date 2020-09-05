@@ -60,12 +60,13 @@ var App = function (_React$Component2) {
     _createClass(App, [{
         key: "render",
         value: function render() {
-            return null;
-            // return(
-            //     <div id={"test"}>
-            //
-            //     </div>
-            // );
+            // return null;
+            return React.createElement(
+                Fragment,
+                null,
+                React.createElement(UI, null),
+                React.createElement(GameCanvas, null)
+            );
         }
     }]);
 
