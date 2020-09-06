@@ -3,6 +3,8 @@ import React from 'react';
 class ItemSelectionScreen extends React.Component{
     constructor(props){
         super(props);
+        this.toggleItem = this.toggleItem.bind(this);
+
         this.sanitizerState = false;
         this.maskState = false;
         this.snackState = false;
@@ -15,7 +17,7 @@ class ItemSelectionScreen extends React.Component{
 
     //Toggles item on click
     toggleItem(itemName){
-        if(itemName == "Hand sanitizer"){
+        if(itemName === "Hand sanitizer"){
             if(this.sanitizerState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.sanitizerState = false;
@@ -28,7 +30,7 @@ class ItemSelectionScreen extends React.Component{
             }
         }
             
-        else if(itemName == "Mask"){
+        else if(itemName === "Mask"){
             if(this.maskState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.maskState = false;
@@ -41,7 +43,7 @@ class ItemSelectionScreen extends React.Component{
             }
         }
 
-        else if(itemName == "Snack"){
+        else if(itemName === "Snack"){
             if(this.snackState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.snackState = false;
@@ -54,7 +56,7 @@ class ItemSelectionScreen extends React.Component{
             }
         }
 
-        else if(itemName == "Shoes"){
+        else if(itemName === "Shoes"){
             if(this.shoesState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.shoesState = false;
@@ -67,7 +69,7 @@ class ItemSelectionScreen extends React.Component{
             }
         }
 
-        else if(itemName == "Lab goggles"){
+        else if(itemName === "Lab goggles"){
             if(this.gogglesState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.gogglesState = false;
@@ -80,7 +82,7 @@ class ItemSelectionScreen extends React.Component{
             }
         }
 
-        else if(itemName == "Lab notebook"){
+        else if(itemName === "Lab notebook"){
             if(this.notebookState){
                 this.props.player.inventory.splice(this.props.player.inventory.indexOf(itemName),1);
                 this.notebookState = false;
@@ -92,21 +94,25 @@ class ItemSelectionScreen extends React.Component{
                 }
             }
         }
+
+        console.log(`Inventory length: ${this.props.player.inventory.length}`);
     }
+
+
 
     render(){
         return (
-        <div componentType="ItemSelectionScreen">
-            <div componentType="selectionSection">
-                <div componentType="sanitizerSelectButton" onClick={this.toggleItem("Hand Sanitizer")}><img src="../Images/Sanitizer.png" />Hand sanitizer</div>
-                <div componentType="maskSelectButton" onClick={this.toggleItem("Mask")}><img src="./Game_assets/Mask.png" />Mask</div>
-                <div componentType="snackSelectButton" onClick={this.toggleItem("Snack")}><img src={require("../Images/Snack.png")} />Snack</div>
-                <div componentType="shoesSelectButton" onClick={this.toggleItem("Shoes")}><img src="../Images/Shoes.png" />Shoes</div>
-                <div componentType="gogglesSelectButton" onClick={this.toggleItem("Lab goggles")}><img src="../Images/Goggles.png" />Lab goggles</div>
-                <div componentType="notebookSelectButton" onClick={this.toggleItem("Lab notebook")}><img src="../Images/Lab_Notebook.png" />Lab notebook</div>
+        <div componenttype="ItemSelectionScreen">
+            <div componenttype="selectionSection">
+                <div componenttype="sanitizerSelectButton" onClick={(e) => {this.toggleItem("Hand sanitizer")}}><img src={require("../Images/Sanitizer.png")} />Hand sanitizer</div>
+                <div componenttype="maskSelectButton" onClick={(e) => {this.toggleItem("Mask")}}><img src={require("../Images/Mask.png")} />Mask</div>
+                <div componenttype="snackSelectButton" onClick={(e) => {this.toggleItem("Snack")}}><img src={require("../Images/Snack.png")} />Snack</div>
+                <div componenttype="shoesSelectButton" onClick={(e) => {this.toggleItem("Shoes")}}><img src={require("../Images/Shoes.png")} />Shoes</div>
+                <div componenttype="gogglesSelectButton" onClick={(e) => {this.toggleItem("Lab goggles")}}><img src={require("../Images/Goggles.png")} />Lab goggles</div>
+                <div componenttype="notebookSelectButton" onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} />Lab notebook</div>
             </div>
 
-            <div componentType="startGameButton" onClick="">Start!</div>
+            <div componenttype="startGameButton" onClick={function(e) {console.log("Start pressed")}}>Start!</div>
         </div>
         );
     }
