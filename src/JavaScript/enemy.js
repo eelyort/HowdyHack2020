@@ -114,3 +114,23 @@ class Enemy extends Movable{
         
     }
 }
+
+class EnemyPatrol extends Enemy{
+    count = 0; //Track which turn it is so enemy knows which direction it is
+    array;
+    constructor(arr)
+    {
+        super(startX, startY, range, angle);
+        this.array = arr; //Accepting the array of arrays
+    }
+    tick(grid, array)
+    {
+        //Assuming the x and y values are relative to the enemy
+        //Ex: [1, 0] -> move 1 in x direction
+        var x = array[count][0];
+        var y = array[count][1];
+        this.move(x,y,grid);
+    }
+    //array of array with each value 2, x, y
+    //assume either upward or downward
+}
