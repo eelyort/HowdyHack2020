@@ -40,14 +40,14 @@ class App extends React.Component{
         if(this.state.stage === 0){
             this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
             this.game = (
-                <Game map={Data.map1} start={Data.start1} player={this.player} />
+                <Game map={Data.map1} start={Data.start1} player={this.player} enemies={Data.enemies1} graphicMap={Data.graphicMap1} />
             );
         }
         // to main
         else if(this.state.stage === 1){
             this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
             this.game = (
-                <Game map={Data.map2} start={Data.start2} player={this.player} />
+                <Game map={Data.map2} start={Data.start2} player={this.player} enemies={Data.enemies2} graphicMap={Data.graphicMap2} />
             );
         }
         // increment

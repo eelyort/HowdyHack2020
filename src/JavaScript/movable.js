@@ -8,7 +8,7 @@ class Movable{
     //   0: empty
     //   1: grass
     move(xMove, yMove, grid){
-        let [currX, currY] = [Math.round(this.x), Math.round(this.y)];
+        let [currX, currY] = this.getGridPos();
 
         // horizontal
         let tXMove = 0;
@@ -70,6 +70,9 @@ class Movable{
             }
         }
         this.y += tYMove;
+    }
+    getGridPos(){
+        return [Math.round(this.x), Math.round(this.y)];
     }
 }
 
