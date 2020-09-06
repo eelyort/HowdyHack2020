@@ -76,18 +76,20 @@ export function ContinuousSlider() {
         </div>
     );
 }
-export function LinearDeterminate() {
+export function ProgressBar() {
     const classes = useStylesLinearProgress();
     const [progress, setProgress] = React.useState(0);
 
     React.useEffect(() => {
         const timer = setInterval(() => {
         setProgress((oldProgress) => {
-            if (oldProgress === 100) {
-            return 0;
+            /*
+            if (oldProgress === this.props.player.covidBar) {
+                return oldProgress;
             }
-            const diff = Math.random() * 10;
-            return Math.min(oldProgress + diff, 100);
+            else{
+                return this.props.player.covidBar
+            }*/
         });
         }, 500);
 
@@ -155,9 +157,10 @@ class UI extends React.Component{
               
                 THIS IS DIV
                 {/*This is the menu thing. The code for it is in the function fademenu. */}
-                <FadeMenu/>
+                {/*<FadeMenu/>*/}
                 {/*This is the progress bar. The code for it is in the function LinearDeterminate. */}
-                <LinearDeterminate/>
+                <ProgressBar player = {this.props.player}>
+                </ProgressBar>
 
                 {/*These are 2 types of buttons. If u want a different color button, reference the thing called ColorButton.(Ctrl F it). Its the const one. U can put whatever color u want.
                 
