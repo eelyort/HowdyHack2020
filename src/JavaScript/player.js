@@ -51,6 +51,9 @@ class Player extends Movable{
             totX -= this.speed;
         }
         this.move(totX, totY, grid);
+
+        // TODO: if dead return false
+        return true;
     }
     componentWillUnmount(){
         window.removeEventListener("keydown", (event) => this.keyDown(event));

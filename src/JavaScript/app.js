@@ -81,6 +81,9 @@ class App extends React.Component{
             </Util.Fragment>
         );
     }
+    componentDidMount() {
+        setTimeout(() => this.nextStage(), 500);
+    }
 }
 
 export default App;
