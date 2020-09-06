@@ -1,3 +1,5 @@
+import * as Constants from "./constants";
+
 class Enemy extends Movable{
     constructor(startX, startY, range, angle) {
         super(startX,startY);
@@ -84,22 +86,22 @@ class Enemy extends Movable{
         {
             if(randDir==0)
             {
-                this.move(1, 0, grid);
+                this.move(Constants.baseSpeedEnemy, 0, grid);
             }
             else
             {
-                this.move(-1, 0, grid);
+                this.move(-Constants.baseSpeedEnemy, 0, grid);
             }
         }
         else
         {
             if(randDir==0)
             {
-                this.move(0, 1, grid);
+                this.move(0, Constants.baseSpeedEnemy, grid);
             }
             else
             {
-                this.move(1, 0, grid);
+                this.move(0, -Constants.baseSpeedEnemy, grid);
             }
         }
         //Old garbage
