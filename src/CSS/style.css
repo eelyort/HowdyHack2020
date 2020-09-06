@@ -4,6 +4,9 @@
     --white: #ffffffff;
     --light-slate-gray: #698996ff;
     --rich-black-fogra-29: #0c1821ff;
+
+    --charcoal: #3a4454ff;
+    --dark-electric-blue: #53687eff;
 }
 
 /*vvvvvvvvvvvvvvvvvvvvv General Purpose react classes BELOW vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
@@ -202,6 +205,31 @@
 }
 
 /*^^^^^^^^^^^^^^^^^^^^^^^^^ General Purpose react classes ABOVE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.player_icon .enemy_icon{
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+}
+.player_icon{
+    background-color: var(--rosewood);
+    top: 50%;
+    left: 50%;
+}
+.enemy_icon{
+    background-color: var(--light-slate-gray);
+}
+
+.full_fill{
+    width: 100%;
+    height: 100%;
+}
+
 #cont{
     width: 100vw;
     height: 100vh;
