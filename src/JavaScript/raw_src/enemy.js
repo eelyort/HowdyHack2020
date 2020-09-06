@@ -68,7 +68,7 @@ class Enemy extends Movable{
         }
         
         //Final Multiplier
-        damage *= angleMult*disMult;
+        damage *= angleMult*distMult;
         return damage;
     }
     
