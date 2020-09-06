@@ -82,14 +82,17 @@ class Enemy extends Movable{
         var randAxis = Math.floor(Math.random()*2);
         //0 = Forward, 1 = Backward
         var randDir = Math.floor(Math.random()*2);
+        // N/E/S/W = 0/1/2/3
         if(randAxis==0)
         {
             if(randDir==0)
             {
+                this.direction = 3;
                 this.move(Constants.baseSpeedEnemy, 0, grid);
             }
             else
             {
+                this.direction = 1;
                 this.move(-Constants.baseSpeedEnemy, 0, grid);
             }
         }
@@ -97,10 +100,12 @@ class Enemy extends Movable{
         {
             if(randDir==0)
             {
+                this.direction = 0;
                 this.move(0, Constants.baseSpeedEnemy, grid);
             }
             else
             {
+                this.direction = 2;
                 this.move(0, -Constants.baseSpeedEnemy, grid);
             }
         }
