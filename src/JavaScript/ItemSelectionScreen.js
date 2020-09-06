@@ -1,4 +1,5 @@
 import React from 'react';
+import "../CSS/item_selection_screen.css";
 
 class ItemSelectionScreen extends React.Component{
     constructor(props){
@@ -102,20 +103,21 @@ class ItemSelectionScreen extends React.Component{
 
     render(){
         return (
-        <div componenttype="ItemSelectionScreen">
-            <div componenttype="selectionSection">
-                <div componenttype="sanitizerSelectButton" onClick={(e) => {this.toggleItem("Hand sanitizer")}}><img src={require("../Images/Sanitizer.png")} />Hand sanitizer</div>
-                <div componenttype="maskSelectButton" onClick={(e) => {this.toggleItem("Mask")}}><img src={require("../Images/Mask.png")} />Mask</div>
-                <div componenttype="snackSelectButton" onClick={(e) => {this.toggleItem("Snack")}}><img src={require("../Images/Snack.png")} />Snack</div>
-                <div componenttype="shoesSelectButton" onClick={(e) => {this.toggleItem("Shoes")}}><img src={require("../Images/Shoes.png")} />Shoes</div>
-                <div componenttype="gogglesSelectButton" onClick={(e) => {this.toggleItem("Lab goggles")}}><img src={require("../Images/Goggles.png")} />Lab goggles</div>
-                <div componenttype="notebookSelectButton" onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} />Lab notebook</div>
+        <div className="item-selection-screen">
+            <h1>Choose your items!</h1>
+            <div className="selection-section">
+                <div className="item-button sanitizer-select-button" onClick={(e) => {this.toggleItem("Hand sanitizer")}}><img src={require("../Images/Sanitizer.png")} /><p>Hand sanitizer</p></div>
+                <div className="item-button mask-select-button" onClick={(e) => {this.toggleItem("Mask")}}><img src={require("../Images/Mask.png")} /><p>Mask</p></div>
+                <div className="item-button snack-select-button" onClick={(e) => {this.toggleItem("Snack")}}><img src={require("../Images/Snack.png")} /><p>Snack</p></div>
+                <div className="item-button shoes-select-button" onClick={(e) => {this.toggleItem("Shoes")}}><img src={require("../Images/Shoes.png")} /><p>Shoes</p></div>
+                <div className="item-button goggles-select-button" onClick={(e) => {this.toggleItem("Lab goggles")}}><img src={require("../Images/Goggles.png")} /><p>Lab goggles</p></div>
+                <div className="item-button notebook-select-button" onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} /><p>Lab notebook</p></div>
             </div>
 
-            <div componenttype="startGameButton" onClick={(e) => {
-                console.log("click start");
+            <div className="start-game-button" onClick={(e) => {
+                console.log("clicked play");
                 this.props.startFunc();
-            }}>Start!</div>
+            }}>Play</div>
         </div>
         );
     }

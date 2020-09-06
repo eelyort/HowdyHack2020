@@ -1,0 +1,76 @@
+.item-selection-screen {
+    width: 101vw;
+    height: 100vh;
+    position: absolute;
+    top: -1.4vh;
+    left: -0.8vw;
+    background-color: lightblue;
+}
+
+h1 {
+    position: absolute;
+    top: 50px;
+    left: 50vw;
+    transform: translate(-50%);
+}
+
+p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.selection-section {
+    width: 886px;
+    top: 175px;
+    position: absolute;
+    left: 50vw;
+    transform: translate(-50%);
+    border: 1px solid red;
+}
+
+.item-button {
+    background-color: white;
+    width:100px;
+    height: 150px;
+    display: inline-block;
+    border: 3px solid red;
+    border-radius: 20px;
+}
+
+.mask-select-button {
+    position: relative;
+    left: 50px;
+}
+
+.snack-select-button {
+    position: relative;
+    left: 100px;
+}
+
+.shoes-select-button {
+    position: relative;
+    left: 150px;
+}
+
+.goggles-select-button {
+    position: relative;
+    left: 200px;
+}
+
+.notebook-select-button {
+    position: relative;
+    left: 250px;
+}
+
+.start-game-button {
+    background-color: white;
+    position: absolute;
+    top: 400px;
+    left: 50vw;
+    font-size: 30px;
+    transform: translate(-50%);
+    padding: 15px 40px;
+    border: 3px solid black;
+    border-radius: 5px;
+}
