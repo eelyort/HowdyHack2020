@@ -12,6 +12,7 @@ h1 {
     top: 50px;
     left: 50vw;
     transform: translate(-50%);
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -26,7 +27,6 @@ p {
     position: absolute;
     left: 50vw;
     transform: translate(-50%);
-    border: 1px solid red;
 }
 
 .item-button {
@@ -34,8 +34,13 @@ p {
     width:100px;
     height: 150px;
     display: inline-block;
-    border: 3px solid red;
+    cursor: pointer;
+
     border-radius: 20px;
+}
+
+.mask-select-button {
+    position: relative;
 }
 
 .mask-select-button {
@@ -63,6 +68,11 @@ p {
     left: 250px;
 }
 
+.selected {
+    border: 3px solid green;
+    background-color: red;
+}
+
 .start-game-button {
     background-color: white;
     position: absolute;
@@ -70,7 +80,8 @@ p {
     left: 50vw;
     font-size: 30px;
     transform: translate(-50%);
-    padding: 15px 40px;
-    border: 3px solid black;
-    border-radius: 5px;
+    padding: 12px 40px;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
 }
