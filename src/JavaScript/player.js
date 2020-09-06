@@ -23,9 +23,11 @@ class Player extends Movable{
         this.tick = this.tick.bind(this);
     }
     keyDown(event){
+        console.log("key down");
         this.keysDown.add(event.key);
     }
     keyUp(event){
+        console.log("key up");
         if(this.keysDown.has(event.key)){
             this.keysDown.delete(event.key);
         }
@@ -54,6 +56,7 @@ class Player extends Movable{
         else if(this.keysDown.has("A") || this.keysDown.has("a") || this.keysDown.has("ArrowLeft")){
             totX -= this.speed;
         }
+        // console.log(`play: tX: ${totX}, tY: ${totY}`);
         this.move(totX, totY, grid);
 
         // TODO: if dead return false

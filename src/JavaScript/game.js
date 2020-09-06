@@ -21,11 +21,14 @@ class Game extends React.Component{
         this.gameInterval = null;
 
         this.wrapper = React.createRef();
+        this.canvasRef = React.createRef();
 
         this.tick = this.tick.bind(this);
     }
     tick(){
         const {map: map, start: start, player: player, enemies: enemies, graphicMap: graphicMap} = this.props;
+
+        // console.log("game tick");
 
         enemies.map((value, index) => value.tick(map));
         let ans = player.tick(map, enemies);
@@ -39,7 +42,37 @@ class Game extends React.Component{
 
         const [currX, currY] = player.getGridPos();
 
-        // console.log("game render");
+        // // console.log("game render");
+        // // TODO delete test
+        // let openSpots = [];
+        // for (let x = 0; x < map.length; x++) {
+        //     for (let y = 0; y < map[x].length; y++) {
+        //         let style = {
+        //             height: "5px",
+        //             width: "5px",
+        //             backgroundColor: "green",
+        //             position: "absolute",
+        //             top: `${y * Constants.scaleFactor}px`,
+        //             left: `${x * Constants.scaleFactor}px`
+        //         };
+        //         if(map[x][y] === 0){
+        //             openSpots.push(
+        //                 <div key={`${x} ${y}`} style={style} className={"open_icon"}/>
+        //             );
+        //         }
+        //     }
+        // }
+        // let inlineDeath = {
+        //     height: "15px",
+        //     width: "15px",
+        //     backgroundColor: "magenta",
+        //     position: "absolute",
+        //     top: `${currY * Constants.scaleFactor}px`,
+        //     left: `${currX * Constants.scaleFactor}px`
+        // };
+        // openSpots.push(
+        //     <div key={"player"} style={inlineDeath} className={"open_icon"}/>
+        // );
 
         let style = null;
         let player_div = null;
@@ -87,6 +120,7 @@ class Game extends React.Component{
                     <Fragment>
                         {player_div}
                         {enemy_divs}
+                        {/*{openSpots}*/}
                     </Fragment>
                 ) : null)}
             </div>
