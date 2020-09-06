@@ -9,16 +9,12 @@ class Game extends React.Component{
 
         const {map: map, start: start, player: player, enemies: enemies, graphicMap: graphicMap} = this.props;
 
-        this.time = 0;
-
         this.gameInterval = null;
 
         this.wrapper = React.createRef();
     }
     tick(){
         const {map: map, start: start, player: player, enemies: enemies, graphicMap: graphicMap} = this.props;
-
-        this.time++;
 
         enemies.map((value, index) => value.tick(map));
         return (player.tick(map, enemies));

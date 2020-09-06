@@ -14,6 +14,8 @@ class Player extends Movable{
 
         this.keysDown = new Set();
 
+        this.time = 0;
+
         // TODO: check if this works with REACT app
         window.addEventListener("keydown", (event) => this.keyDown(event));
         window.addEventListener("keyup", (event) => this.keyUp(event));
@@ -29,6 +31,8 @@ class Player extends Movable{
         }
     }
     tick(grid, enemies){
+        this.time++;
+
         const [currX, currY] = this.getGridPos();
 
         // damage

@@ -1,3 +1,5 @@
+export const totalTime = 1000;  // TODO
+
 export const start1 = [0, 0];
 export const map1 = [];
 export const enemies1 = [];

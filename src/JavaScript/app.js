@@ -19,7 +19,7 @@ class App extends React.Component{
     constructor(props){
         super(props);
 
-        this.player = new Player();
+        this.player = new Player(0, 0);
 
         this.state = {stage: 0};
 
@@ -79,7 +79,7 @@ class App extends React.Component{
         // render
         return(
             <Util.Fragment>
-                <UI>
+                <UI player={this.player}>
                     {game}
                 </UI>
             </Util.Fragment>
