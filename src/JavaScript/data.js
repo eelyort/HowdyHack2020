@@ -1,7 +1,9 @@
-var start1 = [0, 0];
-var map1 = [];
-var enemies1 = [];
+export const start1 = [0, 0];
+export const map1 = [];
+export const enemies1 = [];
 
-var start2 = [0, 0];
-var map2 = [];
-var enemies2 = [];
+export const start2 = [0, 0];
+export const map2 = [];
+export const enemies2 = [];
+
+// TODO: deleted code

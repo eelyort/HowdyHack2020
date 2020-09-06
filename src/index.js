@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './CSS/style.css';
+import Shell from './JavaScript/shell';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Shell />
   </React.StrictMode>,
   document.getElementById('root')
 );
