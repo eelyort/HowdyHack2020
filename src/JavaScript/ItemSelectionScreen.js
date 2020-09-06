@@ -98,21 +98,7 @@ class ItemSelectionScreen extends React.Component{
 
         console.log(`Inventory length: ${this.props.player.inventory.length}`);
 
-        this.render();
-    }
-
-    getButtonClassName(itemName){
-        if(itemName === "sanitizer"){
-            console.log("check1");
-            if(this.sanitizerState){
-                console.log("check2");
-                return "item-button-selected";
-            }
-            else{
-                console.log("check3");
-                return "item-button";
-            }
-        }
+        this.forceUpdate();
     }
 
     render(){
@@ -120,12 +106,12 @@ class ItemSelectionScreen extends React.Component{
         <div className="item-selection-screen">
             <h1>Choose three items!</h1>
             <div className="selection-section">
-                <div className={this.getButtonClassName("sanitizer")} onClick={(e) => {this.toggleItem("Hand sanitizer")}}><img src={require("../Images/Sanitizer.png")} /><p>Hand sanitizer</p></div>
-                <div className={`item-button mask-select-button `} onClick={(e) => {this.toggleItem("Mask")}}><img src={require("../Images/Mask.png")} /><p>Mask</p></div>
-                <div className={`item-button snack-select-button `} onClick={(e) => {this.toggleItem("Snack")}}><img src={require("../Images/Snack.png")} /><p>Snack</p></div>
-                <div className={`item-button shoes-select-button `} onClick={(e) => {this.toggleItem("Shoes")}}><img src={require("../Images/Shoes.png")} /><p>Shoes</p></div>
-                <div className={`item-button goggles-select-button `} onClick={(e) => {this.toggleItem("Lab goggles")}}><img src={require("../Images/Goggles.png")} /><p>Lab goggles</p></div>
-                <div className={`item-button notebook-select-button `} onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} /><p>Lab notebook</p></div>
+                <div className={`item-button ${this.sanitizerState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Hand sanitizer")}}><img src={require("../Images/Sanitizer.png")} /><p>Hand sanitizer</p></div>
+                <div className={`item-button mask-select-button ${this.maskState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Mask")}}><img src={require("../Images/Mask.png")} /><p>Mask</p></div>
+                <div className={`item-button snack-select-button ${this.snackState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Snack")}}><img src={require("../Images/Snack.png")} /><p>Snack</p></div>
+                <div className={`item-button shoes-select-button ${this.shoesState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Shoes")}}><img src={require("../Images/Shoes.png")} /><p>Shoes</p></div>
+                <div className={`item-button goggles-select-button ${this.gogglesState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Lab goggles")}}><img src={require("../Images/Goggles.png")} /><p>Lab goggles</p></div>
+                <div className={`item-button notebook-select-button ${this.notebookState ? "selected" : ""}`} onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} /><p>Lab notebook</p></div>
             </div>
 
             <div className="start-game-button" onClick={(e) => {
