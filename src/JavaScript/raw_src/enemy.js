@@ -69,7 +69,7 @@ class Enemy extends Movable{
         
         //Final Multiplier
         damage *= angleMult*disMult;
-        return 
+        return damage;
     }
     
     tick(grid)
