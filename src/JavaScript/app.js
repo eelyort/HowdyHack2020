@@ -85,7 +85,7 @@ class App extends React.Component{
         );
     }
     componentDidMount() {
-        setTimeout(() => this.nextStage(), 500);
+        //setTimeout(() => this.nextStage(), 500);
     }
 }
 
