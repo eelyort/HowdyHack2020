@@ -74,6 +74,71 @@ class Enemy extends Movable{
     
     tick(grid)
     {
-        
+        var x;
+        var randMove = Math.floor(Math.random() * 3);
+        var randX = Math.floor(Math.random()*10);
+        var randY = Math.floor(Math.random()*10);
+        //1 will be square motion
+        //2 will be back and forth horizontal
+        //3 will be back and forth vertical
+        // N/E/S/W = 0/1/2/3
+        if(randMove==1)
+        {
+            //Counterclockwise motion
+            for(x = 0; x<randX; x++)
+            {
+                this.direction = 1;
+                this.move(1, 0, grid);
+            }
+            for(x = 0; x<randY; x++)
+            {
+                this.direction = 0;
+                this.move(0, 1, grid);
+            }
+            for(x = 0; x<randX; x++)
+            {
+                this.direction = 3;
+                this.move(-1, 0, grid);
+            }
+            for(x = 0; x<randY; x++)
+            {
+                this.direction = 2;
+                this.move(0, -1, grid);
+            }
+        }
+        else if(randMove==2)
+        {
+            for(x = 0; x<20; x++)
+            {
+                if(x<randX)
+                {
+                    this.direction = 1;
+                    this.move(1, 0, grid);
+                }
+                else
+                {
+                    this.direction = 3;
+                    this.move(-1, 0, grid);
+                }
+                
+            }
+        }
+        else if(randMove==3)
+        {
+            for(x = 0; x<20; x++)
+            {
+                if(x<randY)
+                {
+                    this.direction = 0;
+                    this.move(0, 1, grid);
+                }
+                else
+                {
+                    this.direction = 1;
+                    this.move(0, -1, grid);
+                }
+
+            }
+        }
     }
 }
