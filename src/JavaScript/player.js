@@ -59,10 +59,6 @@ class Player extends Movable{
         // TODO: if dead return false
         return true;
     }
-    componentWillUnmount(){
-        window.removeEventListener("keydown", (event) => this.keyDown(event));
-        window.removeEventListener("keyup", (event) => this.keyUp(event));
-    }
 }
 
 export default Player;

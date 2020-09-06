@@ -19,7 +19,11 @@ class App extends React.Component{
     constructor(props){
         super(props);
 
+        console.log("App Constructor");
+
         this.player = new Player(0, 0);
+        // console.log(`app player:`);
+        // console.log(this.player);
 
         this.state = {stage: 0};
 
@@ -32,8 +36,8 @@ class App extends React.Component{
         this.nextStage = this.nextStage.bind(this);
     }
     tick(){
-        console.log(this.game);
-        console.log(this.gameRef);
+        // console.log(this.game);
+        // console.log(this.gameRef);
         if(!this.gameRef.current.tick()){
             this.nextStage();
         }
@@ -64,6 +68,13 @@ class App extends React.Component{
             game = (
                 <ItemSelectionScreen player={this.player} startFunc={() => this.nextStage()} />
             );
+            return(
+                <Util.Fragment>
+                    <UI player={this.player}>
+                        {game}
+                    </UI>
+                </Util.Fragment>
+            );
         }
         // tutorial or game
         else if(this.state.stage === 1 || this.state.stage === 2){
@@ -80,8 +91,8 @@ class App extends React.Component{
         return(
             <Util.Fragment>
                 <UI player={this.player}>
-                    {game}
                 </UI>
+                {game}
             </Util.Fragment>
         );
     }

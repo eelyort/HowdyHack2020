@@ -205,7 +205,7 @@
 }
 
 /*^^^^^^^^^^^^^^^^^^^^^^^^^ General Purpose react classes ABOVE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
-.player_icon .enemy_icon{
+.player_icon, .enemy_icon{
     border-radius: 100px;
     width: 50px;
     height: 50px;

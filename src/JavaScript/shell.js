@@ -7,6 +7,8 @@ class Shell extends React.Component{
     constructor(props){
         super(props);
 
+        console.log("Shell constructor");
+
         // this.state = {ready: false};
         // this.wrapperRef = React.createRef();
     }
@@ -16,25 +18,7 @@ class Shell extends React.Component{
                 <App />
             </div>
         );
-        // if(this.state.ready){
-        //     return (
-        //         <div ref={this.wrapperRef} className={"react_wrapper"}>
-        //             <SquareFill parentRef={this.wrapperRef}>
-        //                 <App />
-        //             </SquareFill>
-        //         </div>
-        //     );
-        // }
-        // else{
-        //     return (
-        //         <div ref={this.wrapperRef} className={"react_wrapper"}>
-        //         </div>
-        //     );
-        // }
     }
-    // componentDidMount(){
-    //     this.setState(() => ({ready: true}));
-    // }
 }
 
 export default Shell;
