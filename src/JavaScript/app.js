@@ -62,7 +62,7 @@ class App extends React.Component{
         // item select
         if(this.state.stage === 0){
             game = (
-                <ItemSelectionScreen player={this.player} />
+                <ItemSelectionScreen player={this.player} startFunc={() => this.nextStage()} />
             );
         }
         // tutorial or game
