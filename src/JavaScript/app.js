@@ -79,8 +79,9 @@ class App extends React.Component{
         // render
         return(
             <Util.Fragment>
-                <UI />
-                {game}
+                <UI>
+                    {game}
+                </UI>
             </Util.Fragment>
         );
     }

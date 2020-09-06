@@ -112,7 +112,10 @@ class ItemSelectionScreen extends React.Component{
                 <div componenttype="notebookSelectButton" onClick={(e) => {this.toggleItem("Lab notebook")}}><img src={require("../Images/Lab_Notebook.png")} />Lab notebook</div>
             </div>
 
-            <div componenttype="startGameButton" onClick={function(e) {console.log("Start pressed")}}>Start!</div>
+            <div componenttype="startGameButton" onClick={(e) => {
+                console.log("click start");
+                this.props.startFunc();
+            }}>Start!</div>
         </div>
         );
     }

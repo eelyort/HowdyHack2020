@@ -174,6 +174,8 @@ class UI extends React.Component{
                 <div className = "UIButton2">
                     <Button className = {classes.root} size="small" variant = "outlined" color = "primary" >TO DO BUTTON</Button>
                 </div>
+
+              {this.props.children}
           </div>
           
         );
