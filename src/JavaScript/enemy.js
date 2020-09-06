@@ -74,71 +74,36 @@ class Enemy extends Movable{
     
     tick(grid)
     {
+        //Boss: unpredictable movement
         var x;
-        var randMove = Math.floor(Math.random() * 3);
-        var randX = Math.floor(Math.random()*10);
-        var randY = Math.floor(Math.random()*10);
-        //1 will be square motion
-        //2 will be back and forth horizontal
-        //3 will be back and forth vertical
-        // N/E/S/W = 0/1/2/3
-        if(randMove==1)
+        //0 = Horizontal, 1 = Vertical
+        var randAxis = Math.floor(Math.random()*2);
+        //0 = Forward, 1 = Backward
+        var randDir = Math.floor(Math.random()*2);
+        if(randAxis==0)
         {
-            //Counterclockwise motion
-            for(x = 0; x<randX; x++)
+            if(randDir==0)
             {
-                this.direction = 1;
                 this.move(1, 0, grid);
             }
-            for(x = 0; x<randY; x++)
+            else
             {
-                this.direction = 0;
-                this.move(0, 1, grid);
-            }
-            for(x = 0; x<randX; x++)
-            {
-                this.direction = 3;
                 this.move(-1, 0, grid);
             }
-            for(x = 0; x<randY; x++)
-            {
-                this.direction = 2;
-                this.move(0, -1, grid);
-            }
         }
-        else if(randMove==2)
+        else
         {
-            for(x = 0; x<20; x++)
+            if(randDir==0)
             {
-                if(x<randX)
-                {
-                    this.direction = 1;
-                    this.move(1, 0, grid);
-                }
-                else
-                {
-                    this.direction = 3;
-                    this.move(-1, 0, grid);
-                }
-                
+                this.move(0, 1, grid);
+            }
+            else
+            {
+                this.move(1, 0, grid);
             }
         }
-        else if(randMove==3)
-        {
-            for(x = 0; x<20; x++)
-            {
-                if(x<randY)
-                {
-                    this.direction = 0;
-                    this.move(0, 1, grid);
-                }
-                else
-                {
-                    this.direction = 1;
-                    this.move(0, -1, grid);
-                }
-
-            }
-        }
+        //Old garbage
+        // N/E/S/W = 0/1/2/3
+        
     }
 }
