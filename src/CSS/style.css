@@ -230,6 +230,15 @@
     height: 100%;
 }
 
+.time_taken{
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: unset;
+    bottom: unset;
+}
+
 #cont{
     width: 100vw;
     height: 100vh;

@@ -19,6 +19,7 @@ class Movable{
         if(xMove >= 0){
             for (let i = currX+1; i <= currX+xMove; i++) {
                 if(i >= grid.length || grid[i][currY] === -1){
+                    tXMove--;
                     break;
                 }
                 else if(grid[i][currY] === 0){
@@ -67,10 +68,10 @@ class Movable{
                     break;
                 }
                 else if(grid[currX][i] === 0){
-                    tYMove++;
+                    tYMove--;
                 }
                 else if(grid[currX][i] === 1){
-                    tYMove += 0.5;
+                    tYMove -= 0.5;
                 }
             }
         }
@@ -81,10 +82,10 @@ class Movable{
                     break;
                 }
                 else if(grid[currX][i] === 0){
-                    tYMove--;
+                    tYMove++;
                 }
                 else if(grid[currX][i] === 1){
-                    tYMove -= 0.5;
+                    tYMove += 0.5;
                 }
             }
         }

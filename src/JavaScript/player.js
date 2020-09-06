@@ -47,13 +47,13 @@ class Player extends Movable{
         if(this.keysDown.has("W") || this.keysDown.has("w") || this.keysDown.has("ArrowUp")){
             totY += this.speed;
         }
-        else if(this.keysDown.has("D") || this.keysDown.has("D") || this.keysDown.has("ArrowRight")){
+        if(this.keysDown.has("D") || this.keysDown.has("d") || this.keysDown.has("ArrowRight")){
             totX += this.speed;
         }
-        else if(this.keysDown.has("S") || this.keysDown.has("s") || this.keysDown.has("ArrowDown")){
+        if(this.keysDown.has("S") || this.keysDown.has("s") || this.keysDown.has("ArrowDown")){
             totY -= this.speed;
         }
-        else if(this.keysDown.has("A") || this.keysDown.has("a") || this.keysDown.has("ArrowLeft")){
+        if(this.keysDown.has("A") || this.keysDown.has("a") || this.keysDown.has("ArrowLeft")){
             totX -= this.speed;
         }
         // console.log(`play: tX: ${totX}, tY: ${totY}`);

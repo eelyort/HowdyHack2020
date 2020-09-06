@@ -150,8 +150,7 @@ class UI extends React.Component{
         return(
             
           <div className="UIDiv1">
-              
-                THIS IS DIV
+
                 {/*This is the menu thing. The code for it is in the function fademenu. */}
                 {/*<FadeMenu/>*/}
                 {/*This is the progress bar. The code for it is in the function LinearDeterminate. */}
@@ -166,8 +165,9 @@ class UI extends React.Component{
                 Go to the link above for more styles. Good luck boiss.
                 */}
                 {this.props.children}
-                <ProgressBar player = {this.props.player}>
+                <ProgressBar player={this.props.player}>
                 </ProgressBar>
+              <h1 className={"time_taken"}>Time Used: {this.props.player.time}</h1>
                 {/*
                 <div className = "UIButton1">
                     <Button size="large" variant = "contained" color = "primary" classname = "colorInherit">TO DO BUTTON</Button>
