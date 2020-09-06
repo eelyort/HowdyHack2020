@@ -29,6 +29,17 @@ p {
     transform: translate(-50%);
 }
 
+.item-button-selected {
+    border: 3px solid green;
+    background-color: red;
+    width:100px;
+    height: 150px;
+    display: inline-block;
+    cursor: pointer;
+
+    border-radius: 20px;
+}
+
 .item-button {
     background-color: white;
     width:100px;
@@ -39,7 +50,7 @@ p {
     border-radius: 20px;
 }
 
-.mask-select-button {
+.sanitizer-select-button {
     position: relative;
 }
 

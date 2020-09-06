@@ -106,11 +106,11 @@ class ItemSelectionScreen extends React.Component{
             console.log("check1");
             if(this.sanitizerState){
                 console.log("check2");
-                return "item-button sanitizer-select-button selected";
+                return "item-button-selected";
             }
             else{
                 console.log("check3");
-                return "item-button sanitizer-select-button";
+                return "item-button";
             }
         }
     }
