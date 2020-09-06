@@ -24,6 +24,7 @@ class App extends React.Component{
         this.state = {stage: 0};
 
         this.game = null;
+        this.gameRef = React.createRef();
 
         this.interval = null;
 
@@ -31,24 +32,26 @@ class App extends React.Component{
         this.nextStage = this.nextStage.bind(this);
     }
     tick(){
-        if(!this.game.tick()){
+        console.log(this.game);
+        console.log(this.gameRef);
+        if(!this.gameRef.current.tick()){
             this.nextStage();
         }
     }
     nextStage(){
         // to tutorial
         if(this.state.stage === 0){
-            this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
             this.game = (
-                <Game map={Data.map1} start={Data.start1} player={this.player} enemies={Data.enemies1} graphicMap={Data.graphicMap1} />
+                <Game map={Data.map1} start={Data.start1} player={this.player} enemies={Data.enemies1} graphicMap={Data.graphicMap1} ref={this.gameRef} />
             );
+            this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
         }
         // to main
         else if(this.state.stage === 1){
-            this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
             this.game = (
-                <Game map={Data.map2} start={Data.start2} player={this.player} enemies={Data.enemies2} graphicMap={Data.graphicMap2} />
+                <Game map={Data.map2} start={Data.start2} player={this.player} enemies={Data.enemies2} graphicMap={Data.graphicMap2} ref={this.gameRef} />
             );
+            this.interval = setInterval(() => this.tick(), Constants.tickSpeed);
         }
         // increment
         this.setState((state) => ({stage: state.stage+1}));

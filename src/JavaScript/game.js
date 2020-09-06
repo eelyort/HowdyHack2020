@@ -5,6 +5,8 @@ class Game extends React.Component{
     constructor(props){
         super(props);
 
+        console.log("Game constructor");
+
         const {map: map, start: start, player: player, enemies: enemies, graphicMap: graphicMap} = this.props;
 
         this.time = 0;
