@@ -100,7 +100,7 @@ class ItemSelectionScreen extends React.Component{
             <div componentType="selectionSection">
                 <div componentType="sanitizerSelectButton" onClick={this.toggleItem("Hand Sanitizer")}><img src="../Images/Sanitizer.png" />Hand sanitizer</div>
                 <div componentType="maskSelectButton" onClick={this.toggleItem("Mask")}><img src="./Game_assets/Mask.png" />Mask</div>
-                <div componentType="snackSelectButton" onClick={this.toggleItem("Snack")}><img src={require("./Images/Snack.png")} />Snack</div>
+                <div componentType="snackSelectButton" onClick={this.toggleItem("Snack")}><img src={require("../Images/Snack.png")} />Snack</div>
                 <div componentType="shoesSelectButton" onClick={this.toggleItem("Shoes")}><img src="../Images/Shoes.png" />Shoes</div>
                 <div componentType="gogglesSelectButton" onClick={this.toggleItem("Lab goggles")}><img src="../Images/Goggles.png" />Lab goggles</div>
                 <div componentType="notebookSelectButton" onClick={this.toggleItem("Lab notebook")}><img src="../Images/Lab_Notebook.png" />Lab notebook</div>
