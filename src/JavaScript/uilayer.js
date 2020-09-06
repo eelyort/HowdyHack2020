@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
 
 const useStylesLinearProgress = makeStyles({
     root: {
-      width: '100%',
+      width: '50%',
       position: "absolute",
-      bottom: "0px",
-      float : "middle",
-      margin: "auto"
+      bottom: "32px",
+      margin: "auto",
+      left : '25%'
     },
   });
 const useStylesProgressBar1 = makeStyles({
@@ -76,25 +76,23 @@ export function ContinuousSlider() {
         </div>
     );
 }
-export function LinearDeterminate() {
+export function ProgressBar(props) {
     const classes = useStylesLinearProgress();
     const [progress, setProgress] = React.useState(0);
 
     React.useEffect(() => {
-        const timer = setInterval(() => {
+        
         setProgress((oldProgress) => {
-            if (oldProgress === 100) {
-            return 0;
+            
+            if (oldProgress === props.player.covidBar) {
+                return oldProgress;
             }
-            const diff = Math.random() * 10;
-            return Math.min(oldProgress + diff, 100);
+            else{
+                return props.player.covidBar
+            }
         });
-        }, 500);
-
-        return () => {
-        clearInterval(timer);
-        };
-    }, []);
+        
+    },[props.player.covidBar])
 
     return (
         <div className={classes.root}>
@@ -155,9 +153,9 @@ class UI extends React.Component{
               
                 THIS IS DIV
                 {/*This is the menu thing. The code for it is in the function fademenu. */}
-                <FadeMenu/>
+                {/*<FadeMenu/>*/}
                 {/*This is the progress bar. The code for it is in the function LinearDeterminate. */}
-                <LinearDeterminate/>
+                
 
                 {/*These are 2 types of buttons. If u want a different color button, reference the thing called ColorButton.(Ctrl F it). Its the const one. U can put whatever color u want.
                 
@@ -167,6 +165,10 @@ class UI extends React.Component{
                 https://material-ui.com/components/buttons/#CustomizedButtons.js 
                 Go to the link above for more styles. Good luck boiss.
                 */}
+                {this.props.children}
+                <ProgressBar player = {this.props.player}>
+                </ProgressBar>
+                {/*
                 <div className = "UIButton1">
                     <Button size="large" variant = "contained" color = "primary" classname = "colorInherit">TO DO BUTTON</Button>
                 </div>
@@ -174,8 +176,8 @@ class UI extends React.Component{
                 <div className = "UIButton2">
                     <Button className = {classes.root} size="small" variant = "outlined" color = "primary" >TO DO BUTTON</Button>
                 </div>
-
-              {this.props.children}
+                */}
+              
           </div>
           
         );
