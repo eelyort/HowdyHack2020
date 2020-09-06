@@ -45,6 +45,7 @@ class Movable{
                 // console.log(near);
 
                 if(i < 0 || grid[i][currY] === -1){
+                    tXMove++;
                     break;
                 }
                 else if(grid[i][currY] === 0){
@@ -65,6 +66,7 @@ class Movable{
             for (let i = currY+1; i <= currY+yMove; i++) {
                 if(i >= grid[0].length || grid[currX][i] === -1){
                     console.log("wall");
+                    tYMove++;
                     break;
                 }
                 else if(grid[currX][i] === 0){
@@ -79,6 +81,7 @@ class Movable{
             for (let i = currY-1; i >= currY+yMove; i--) {
                 if(i < 0 || grid[currX][i] === -1){
                     console.log("wall");
+                    tYMove--;
                     break;
                 }
                 else if(grid[currX][i] === 0){
